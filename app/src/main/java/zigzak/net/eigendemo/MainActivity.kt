@@ -12,6 +12,11 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         sample_text.text = computeDeterminant().toString()
+        println(test(arrayOf(0,1,2,3,4,5,6,7)))
+        val test = test2(arrayOf(0,1,2,3,4,5,6,7))
+        test.forEach {
+            println(it)
+        }
     }
 
     /**
@@ -19,6 +24,12 @@ class MainActivity : AppCompatActivity() {
      * which is packaged with this application.
      */
     private external fun computeDeterminant() : Double
+
+    private external fun computeSelfAdjointEigen(): Float
+
+    private external fun test(arr: Array<Int>): Int
+
+    private external fun test2(arr: Array<Int>): Array<Int>
 
 
     companion object {
